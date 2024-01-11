@@ -19,7 +19,7 @@ const PhotoListItem = ({ photoData }) => {
     <div className="photo-list__item">
       <div className="photo-list__image-container">
         <img className="photo-list__image" src={photoData.imageSource} alt="Sample Photo" />
-        <PhotoFavButton isFavourite={isFavorited} updateToFavPhotoIds={toggleFavoriteStatus} />
+        <PhotoFavButton isFavourite={isFavorited} onFavouriteClick={toggleFavoriteStatus} />
       </div>
       <div className="photo-list__user-details">
         <img className="photo-list__user-profile" src={photoData.profile} alt={photoData.username} />
