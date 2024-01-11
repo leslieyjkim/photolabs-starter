@@ -8,12 +8,18 @@ import "../styles/TopicListItem.scss";
 //   label: "Nature",
 // };
 
-const TopicListItem = (props) => {
+// const TopicListItem = (props) => {
+//   return (
+//     <div className="topic-list__item">
+//       {props.topic.title}
+//     </div>
+//   );
+// };
+const TopicListItem = ({ topic }) => {
   return (
     <div className="topic-list__item">
-      {props.topic.title}
+      {topic.title}
     </div>
   );
 };
-
 export default TopicListItem;
