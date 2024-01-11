@@ -1,20 +1,20 @@
 import React from "react";
 import "../styles/PhotoListItem.scss";
 
-
-
+//it appears that the class names defined in your Sass file are not matching the class names used in your JSX.
+//To apply the Sass styles correctly, you need to ensure that the class names in your JSX match the BEM (Block, Element, Modifier) structured class names in your Sass file.
+// Here's how you can update the PhotoListItem.jsx to use the class names defined in the PhotoListItem.scss file:
 
 const PhotoListItem = ({data}) => {
   return (
-    <div className="photo-list-item">
-      <img className="photo" src={data.imageSource} alt="Sample Photo" />
-      <div className="user-info">
-        <img src={data.profile} alt={data.username} />
-        <span className="username">{data.username}</span>
-      </div>
-      <div className="location-info">
-        <span className="city">{data.location.city}</span>,
-        <span className="country">{data.location.country}</span>
+    <div className="photo-list__item">
+      <img className="photo-list__image" src={data.imageSource} alt="Sample Photo" />
+      <div className="photo-list__user-details">
+        <img className="photo-list__user-profile" src={data.profile} alt={data.username} />
+        <div className="photo-list__user-info">
+          <span className="username">{data.username}</span>
+          <span className="photo-list__user-location">{`${data.location.city}, ${data.location.country}`}</span>
+        </div>
       </div>
     </div>
   );
