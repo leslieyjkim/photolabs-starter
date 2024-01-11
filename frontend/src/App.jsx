@@ -4,6 +4,7 @@ import './App.scss';
 import PhotoList from './components/PhotoList';
 import TopicList from './components/TopicList';
 import TopNavigationBar from './components/TopNavigationBar';
+import HomeRoute from './routes/HomeRoute';
 
 
 // const sampleDataForPhotoListItem = {
@@ -30,8 +31,7 @@ const App = () => {
         // Pass each item of the array to PhotoListItem as a prop and rename the prop to photoData
         <PhotoListItem key={photoData.id + index} photoData={photoData} />
       ))} */}
-      <TopNavigationBar />
-      <PhotoList />
+      <HomeRoute />
     </div>
   );
 };
