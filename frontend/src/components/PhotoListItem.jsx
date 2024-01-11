@@ -1,4 +1,4 @@
-import React, { useState, useCallback } from "react";
+import React, { useState } from "react";
 import "../styles/PhotoListItem.scss";
 import PhotoFavButton from "./PhotoFavButton";
 
@@ -6,14 +6,15 @@ import PhotoFavButton from "./PhotoFavButton";
 //To apply the Sass styles correctly, you need to ensure that the class names in your JSX match the BEM (Block, Element, Modifier) structured class names in your Sass file.
 // Here's how you can update the PhotoListItem.jsx to use the class names defined in the PhotoListItem.scss file:
 
+
+
 const PhotoListItem = ({ photoData }) => {
   const [isFavorited, setIsFavorited] = useState(false);
 
   // Handler to toggle the favorite status
-  const toggleFavoriteStatus = useCallback(() => {
-    setIsFavorited(currentState => !currentState);
-    // Here you can also perform additional tasks, such as updating the parent state or making an API call
-  }, []);
+  const toggleFavoriteStatus = function() {
+    setIsFavorited(!isFavorited);
+  };
 
   return (
     <div className="photo-list__item">
