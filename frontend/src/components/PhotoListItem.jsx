@@ -12,8 +12,11 @@ const PhotoListItem = ({data}) => {
       <div className="photo-list__user-details">
         <img className="photo-list__user-profile" src={data.profile} alt={data.username} />
         <div className="photo-list__user-info">
-          <span className="username">{data.username}</span>
-          <span className="photo-list__user-location">{`${data.location.city}, ${data.location.country}`}</span>
+          <span className="photo-list__user-name">{data.username}</span>
+          <div className="photo-list__user-location">
+            <span className="photo-list__user-city">{data.location.city}</span>,
+            <span className="photo-list__user-country">{data.location.country}</span>
+          </div>
         </div>
       </div>
     </div>
