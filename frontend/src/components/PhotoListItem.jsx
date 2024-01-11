@@ -9,7 +9,7 @@ import PhotoFavButton from "./PhotoFavButton";
 
 
 const PhotoListItem = ({ photoData }) => {
-  const [isFavorited, setIsFavorited] = useState(false);   
+  const [isFavorited, setIsFavorited] = useState(false);
 
   //implemented a state variable isFavorited to keep track of whether a photo is favorited or not.
   // Handler to toggle the favorite status
