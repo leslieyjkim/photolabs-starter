@@ -2,7 +2,8 @@ import React from 'react';
 // import PhotoListItem from './components/PhotoListItem';
 import './App.scss';
 import PhotoList from './components/PhotoList';
-import TopicList from 'components/TopicList';
+import TopicList from './components/TopicList';
+import TopNavigation from './components/TopNavigationBar';
 
 
 // const sampleDataForPhotoListItem = {
@@ -29,7 +30,7 @@ const App = () => {
         // Pass each item of the array to PhotoListItem as a prop and rename the prop to photoData
         <PhotoListItem key={photoData.id + index} photoData={photoData} />
       ))} */}
-
+      <TopNavigation />
       <PhotoList />
     </div>
   );
