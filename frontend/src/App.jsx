@@ -5,18 +5,8 @@ import PhotoList from './components/PhotoList';
 import TopicList from './components/TopicList';
 import TopNavigationBar from './components/TopNavigationBar';
 import HomeRoute from './routes/HomeRoute';
-
-
-// const sampleDataForPhotoListItem = {
-//   id: "1",
-//   location: {
-//     city: "Montreal",
-//     country: "Canada",
-//   },
-//   imageSource: `${process.env.PUBLIC_URL}/Image-1-Regular.jpeg`,
-//   username: "Joe Example",
-//   profile: `${process.env.PUBLIC_URL}/profile-1.jpg`,
-// };
+import topics from './mocks/topics';
+import photos from './mocks/photos';
 
 
 
@@ -27,11 +17,7 @@ const App = () => {
 
   return (
     <div className="App">
-      {/* {photos.map((photoData, index) => (
-        // Pass each item of the array to PhotoListItem as a prop and rename the prop to photoData
-        <PhotoListItem key={photoData.id + index} photoData={photoData} />
-      ))} */}
-      <HomeRoute />
+      <HomeRoute topics={topics} photos={photos} />
     </div>
   );
 };
