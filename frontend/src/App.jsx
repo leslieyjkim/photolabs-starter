@@ -17,10 +17,15 @@ const sampleDataForPhotoListItem = {
 
 
 const App = () => {
+  // Create an array with 3 elements, all of them are sampleDataForPhotoListItem
+  const photos = new Array(3).fill(sampleDataForPhotoListItem);
+
   return (
     <div className="App">
-      {/* Passing sampleDataForPhotoListItem as a prop called data */}
-      <PhotoListItem data={sampleDataForPhotoListItem} />
+      {photos.map((photoData, index) => (
+        // Pass each item of the array to PhotoListItem as a prop
+        <PhotoListItem key={index} data={photoData} />
+      ))}
     </div>
   );
 };
