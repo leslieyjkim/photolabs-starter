@@ -13,7 +13,7 @@ const PhotoList = (props) => {
             key={photo.id}
             photo={photo}
             toggleFav={props.toggleFav}
-            favorite={props.favorite} />);
+            favoritePhotos={props.favoritePhotos} />);
       }
       )}
     </ul>

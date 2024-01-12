@@ -3,7 +3,7 @@ import FavIcon from './FavIcon';
 import '../styles/PhotoFavButton.scss';
 
 const PhotoFavButton = (props) =>  {
-  const isFavorite = props.favorite.includes(props.photoId) ? true : false;
+  const isFavorite = props.favoritePhotos.includes(props.photoId) ? true : false;
 
   const favIconClickHandler = () => {
     props.toggleFav(props.photoId);
