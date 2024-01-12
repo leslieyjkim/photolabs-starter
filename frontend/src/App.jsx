@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState} from 'react';
 // import PhotoListItem from './components/PhotoListItem';
 import './App.scss';
 import PhotoList from './components/PhotoList';
@@ -10,10 +10,8 @@ import photos from './mocks/photos';
 
 
 
+
 const App = () => {
-  // Create an array with 3 elements, all of them are sampleDataForPhotoListItem
-  // const photos = new Array(3).fill(sampleDataForPhotoListItem);
-  // const photos = [...Array(3)].map(() => sampleDataForPhotoListItem);
 
   return (
     <div className="App">
