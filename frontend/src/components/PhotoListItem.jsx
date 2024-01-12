@@ -8,28 +8,20 @@ import PhotoFavButton from "./PhotoFavButton";
 
 
 
-const PhotoListItem = ({ photoData }) => {
-  const [isFavorited, setIsFavorited] = useState(false);
-
-  //implemented a state variable isFavorited to keep track of whether a photo is favorited or not.
-  // Handler to toggle the favorite status
-  const toggleFavoriteStatus = function() {
-    setIsFavorited(!isFavorited);
-  };
-
+const PhotoListItem = (props) => {
   return (
     <div className="photo-list__item">
       <div className="photo-list__image-container">
-        <img className="photo-list__image" src={photoData.imageSource} alt="Sample Photo" />
-        <PhotoFavButton isFavourite={isFavorited} onFavouriteClick={toggleFavoriteStatus} />
+        <img className="photo-list__image" src={props.photo.urls.regular} alt={`Photo by ${props.photo.user.name}`} />
+        <PhotoFavButton />
       </div>
       <div className="photo-list__user-details">
-        <img className="photo-list__user-profile" src={photoData.profile} alt={photoData.username} />
+        <img className="photo-list__user-profile" src={props.photo.user.profile} alt={props.photo.user.name} />
         <div className="photo-list__user-info">
-          <span className="photo-list__user-name">{photoData.username}</span>
+          <span className="photo-list__user-name">{props.photo.user.name}</span>
           <div className="photo-list__user-location">
-            <span className="photo-list__user-city">{photoData.location.city}</span>,
-            <span className="photo-list__user-country">{photoData.location.country}</span>
+            <span className="photo-list__user-city">{props.photo.location.city}</span>,
+            <span className="photo-list__user-country">{props.photo.location.country}</span>
           </div>
         </div>
       </div>
