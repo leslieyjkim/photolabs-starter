@@ -22,7 +22,7 @@ const HomeRoute = (props) => {
 
   return (
     <div className="home-route">
-      <TopNavigationBar topics={ props.topics } isFavoriteExist={ isFavPhotoExist }/>
+      <TopNavigationBar topics={ props.topics } isFavPhotoExist={ isFavPhotoExist }/>
       <PhotoList photos={props.photos} toggleFav={ toggleFav } favorite={ favorite }/>
     </div>
   );
