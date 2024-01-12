@@ -1,14 +1,13 @@
-import React, {useState} from 'react';
+import React from 'react';
 import FavIcon from './FavIcon';
 import '../styles/PhotoFavButton.scss';
 
 const PhotoFavButton = (props) =>  {
-  const [isFavorited, setIsFavorited] = useState(false);
+  const isFavorite = props.favorite.includes(props.photoId) ? true : false;
 
-  const FavIconClickHandler = () => {
-    setIsFavorited(previousIsFavorited => !previousIsFavorited);
+  const favIconClickHandler = () => {
+    props.toggleFav(props.photoId);
   };
-
   //prevIsFavorited는 이전의 isFavorited 상태 값을 나타냅니다.
   // !prevIsFavorited는 이전 상태의 부정(not)을 의미합니다.
   // 즉, isFavorited가 true였다면 false로, false였다면 true로 바꾸는 것입니다.
@@ -16,9 +15,9 @@ const PhotoFavButton = (props) =>  {
   // 이 방법은 현재 상태에 기반하여 다음 상태를 결정할 때 유용합니다.
 
   return (
-    <div className="photo-list__fav-icon" onClick={FavIconClickHandler}>
-      <div className="photo-list__fav-icon-svg">
-        {isFavorited ? <FavIcon selected={isFavorited}/> : <FavIcon />}
+    <div className="photo-list__fav-icon">
+      <div className="photo-list__fav-icon-svg" onClick={ favIconClickHandler}>
+        <FavIcon selected={ isFavorite} />
       </div>
     </div>
   );

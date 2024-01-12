@@ -1,19 +1,13 @@
-import React, { useState } from "react";
+import React from "react";
 import "../styles/PhotoListItem.scss";
 import PhotoFavButton from "./PhotoFavButton";
-
-//it appears that the class names defined in your Sass file are not matching the class names used in your JSX.
-//To apply the Sass styles correctly, you need to ensure that the class names in your JSX match the BEM (Block, Element, Modifier) structured class names in your Sass file.
-// Here's how you can update the PhotoListItem.jsx to use the class names defined in the PhotoListItem.scss file:
-
-
 
 const PhotoListItem = (props) => {
   return (
     <div className="photo-list__item">
       <div className="photo-list__image-container">
         <img className="photo-list__image" src={props.photo.urls.regular} alt={`Photo by ${props.photo.user.name}`} />
-        <PhotoFavButton />
+        <PhotoFavButton toggleFav={props.toggleFav} favorite={props.favorite} photoId={props.photo.id}/>
       </div>
       <div className="photo-list__user-details">
         <img className="photo-list__user-profile" src={props.photo.user.profile} alt={props.photo.user.name} />
