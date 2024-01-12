@@ -6,9 +6,10 @@ import TopNavigationBar from 'components/TopNavigationBar';
 
 const HomeRoute = (props) => {
   const [favoritePhotos, setFavoritePhotos] = useState([]); //ARRAY
-
+  console.log("favoritePhotos:", favoritePhotos);
   const toggleFav = (photoId) => {
     setFavoritePhotos((previousFavorite) => {
+      console.log("previousFavorite:", previousFavorite);
       const isFavorite = previousFavorite.includes(photoId);
       if (isFavorite) {
         return previousFavorite.filter((id) => id !== photoId);
@@ -17,6 +18,7 @@ const HomeRoute = (props) => {
       }
     });
   };
+
  
   const isFavPhotoExist = favoritePhotos.length > 0;
 
