@@ -18,11 +18,11 @@ const HomeRoute = (props) => {
     });
   };
  
-  const isFavoriteExist = favorite.length > 0;
+  const isFavPhotoExist = favorite.length > 0;
 
   return (
     <div className="home-route">
-      <TopNavigationBar topics={ props.topics } isFavoriteExist={ isFavoriteExist }/>
+      <TopNavigationBar topics={ props.topics } isFavoriteExist={ isFavPhotoExist }/>
       <PhotoList photos={props.photos} toggleFav={ toggleFav } favorite={ favorite }/>
     </div>
   );
