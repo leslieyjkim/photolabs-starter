@@ -14,7 +14,7 @@ const App = () => {
   return (
     <div className="App">
       <HomeRoute topics={topics} photos={photos} setDisplayModal={setDisplayModal} />
-      {displayModal && <PhotoDetailsModal closeModal={() => setDisplayModal(false)} />}
+      {displayModal && <PhotoDetailsModal setDisplayModal={setDisplayModal} />}
     </div>
   );
 };

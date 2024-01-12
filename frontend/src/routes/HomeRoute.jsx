@@ -4,10 +4,10 @@ import PhotoList from '../components/PhotoList';
 import TopNavigationBar from '../components/TopNavigationBar';
 import PhotoDetailsModal from './PhotoDetailsModal';
 
-const HomeRoute = ({ topics, photos }) => {
+const HomeRoute = ({ topics, photos, setDisplayModal }) => {
   const [favoritePhotos, setFavoritePhotos] = useState([]); //ARRAY
   // console.log("favoritePhotos:", favoritePhotos);
-  const [isModalOpen, setIsModalOpen] = useState(false);
+
   const [selectedPhoto, setSelectedPhoto] = useState(null);
 
   const toggleFav = (photoId) => {
@@ -26,12 +26,12 @@ const HomeRoute = ({ topics, photos }) => {
 
   const openModal = (photo) => {
     setSelectedPhoto(photo);
-    setIsModalOpen(true);
+    setDisplayModal(true);
   };
 
-  const closeModal = (photo) => {
+  const closeModal = () => {
     setSelectedPhoto(null);
-    setIsModalOpen(false);
+    setDisplayModal(false);
   };
 
 
@@ -39,7 +39,6 @@ const HomeRoute = ({ topics, photos }) => {
     <div className="home-route">
       <TopNavigationBar topics={ topics } isFavPhotoExist={ isFavPhotoExist }/>
       <PhotoList photos={ photos } toggleFav={ toggleFav } favoritePhotos={ favoritePhotos } openModal={ openModal }/>
-      { isModalOpen && <PhotoDetailsModal photo={ selectedPhoto } closeModal={ closeModal }/>}
     </div>
   );
 };
