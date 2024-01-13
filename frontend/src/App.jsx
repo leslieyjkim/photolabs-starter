@@ -5,11 +5,6 @@ import PhotoDetailsModal from './routes/PhotoDetailsModal';
 import topics from './mocks/topics';
 import photos from './mocks/photos';
 
-
-
-
-
-
 const App = () => {
   const [displayModal, setDisplayModal] = useState(false);
   const [favoritePhotos, setFavoritePhotos] = useState([]);
