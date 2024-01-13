@@ -2,10 +2,11 @@ import React from 'react';
 import '../styles/PhotoDetailsModal.scss';
 import closeSymbol from '../assets/closeSymbol.svg';
 import PhotoList from '../components/PhotoList';
+// import PhotoFavButton from '../components/PhotoFavButton';
 
 const PhotoDetailsModal = ({ photo, closeModal, photoListInfo}) => {
   console.log('photo', photo);
-  console.log('photoListInfo', photoListInfo);  // do not place console.log at the return part.
+  console.log('photoListInfo', photoListInfo);
   if (!photo) return null;
   
   const selectedSimilar = function() {
