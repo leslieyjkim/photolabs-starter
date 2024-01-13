@@ -34,12 +34,13 @@ const HomeRoute = ({ topics, photos, setDisplayModal, displayModal}) => {
     setDisplayModal(false);
   };
 
-
+  const photoListInfo = {'toggleFav':toggleFav, 'favoritePhotos':favoritePhotos, 'selectedPhoto':selectedPhoto, 'openModal':openModal};
+  
   return (
     <div className="home-route">
       <TopNavigationBar topics={ topics } isFavPhotoExist={ isFavPhotoExist }/>
-      <PhotoList photos={ photos } toggleFav={ toggleFav } favoritePhotos={ favoritePhotos } openModal={ openModal }/>
-      { displayModal && <PhotoDetailsModal photo={ selectedPhoto } closeModal={ closeModal }/>}
+      <PhotoList photos={ photos } toggleFav={ toggleFav } favoritePhotos={ favoritePhotos } setSelectedPhoto={ setSelectedPhoto } openModal={ openModal }/>
+      { displayModal && <PhotoDetailsModal photo={ selectedPhoto } closeModal={ closeModal } photoListInfo={photoListInfo}/>}
     </div>
   );
 };
