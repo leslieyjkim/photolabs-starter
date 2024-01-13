@@ -7,6 +7,16 @@ const PhotoDetailsModal = ({ photo, closeModal, photoListInfo}) => {
   console.log('photo', photo);
   console.log('photoListInfo', photoListInfo);  // do not place console.log at the return part.
   if (!photo) return null;
+  
+  const selectedSimilar = function() {
+    return (<PhotoList
+      photos={ Object.values(photo.similarPhotos) }
+      toggleFav={ photoListInfo.toggleFav }
+      favoritePhotos={ photoListInfo.favoritePhotos }
+      setSelectedPhoto={ photoListInfo.setSelectedPhoto }
+      openModal={ photoListInfo.openModal }/>);
+  };
+
   return (
     <div className="photo-details-modal">
       <button className="photo-details-modal__close-button" onClick={closeModal}>
@@ -22,7 +32,7 @@ const PhotoDetailsModal = ({ photo, closeModal, photoListInfo}) => {
               { photo.location.city }, { photo.location.country }
             </div>
           </div>
-          <PhotoList photos={ Object.values(photo.similarPhotos) } toggleFav={ photoListInfo.toggleFav } favoritePhotos={ photoListInfo.favoritePhotos } setSelectedPhoto={ photoListInfo.setSelectedPhoto } openModal={ photoListInfo.openModal }/>
+          {selectedSimilar()}
         </div>
       </div>
     </div>
