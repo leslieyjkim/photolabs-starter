@@ -23,9 +23,9 @@ const PhotoDetailsModal = ({ photo, closeModal, photoListInfo}) => {
         <img src={closeSymbol} alt="close symbol" />
       </button>
       <div className="photo-details-modal__images">
-        <img className="photo-details-modal__image" src={ photo.urls.regular }></img>
+        <img className="photo-details-modal__image" src={ photo.urls.regular } alt="selected photo"></img>
         <div className="photo-details-modal__photographer-details">
-          <img className="photo-list__user-profile" src={ photo.user.profile }></img>
+          <img className="photo-list__user-profile" src={ photo.user.profile } alt="photographer's photo"></img>
           <div className="photo-list__user-info">
             <span>{ photo.user.name }</span>
             <div className="photo-list__user-location">
