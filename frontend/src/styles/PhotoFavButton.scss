@@ -1,15 +1,13 @@
 .photo-list__fav-icon {
   position: absolute;
-  top: 8px; // Adjust as necessary
-  left: 8px; // Adjust as necessary
+  top: 8px; 
+  left: 8px; 
   cursor: pointer;
-  border-radius: 50%; // Makes the div circular
-  background-color: white; // White background for the circle
+  border-radius: 100%; // Makes the div circular
+  background-color: #ffffff;
   width: 32px; // Width of the circle
   height: 32px; // Height of the circle
   display: flex;
-  justify-content: center;
-  align-items: center;
 }
 
 .photo-list__fav-icon-svg {

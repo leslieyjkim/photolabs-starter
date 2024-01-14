@@ -33,8 +33,9 @@ const PhotoDetailsModal = ({ photo, closeModal, photoListInfo}) => {
               { photo.location.city }, { photo.location.country }
             </div>
           </div>
-          {selectedSimilar()}
         </div>
+        <p className="photo-details-modal__related-title">Related Photos</p>
+        <div className="photo-details-modal__similarphoto-list">{selectedSimilar()}</div>
       </div>
     </div>
   );

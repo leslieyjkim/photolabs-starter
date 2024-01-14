@@ -4,11 +4,16 @@
   position: fixed;
   top: 55%;
   left: 50%;
-  transform: translate(-50%, -40%);
+  transform: translate(-50%, -50%);
   height: 80%;
   width: 55%;
   overflow-y: scroll;
   border-radius: 12px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding:20px;
+
 }
 
 // .photo-details-modal {
@@ -34,6 +39,7 @@
   cursor: pointer;
   margin-left: 16px;
   margin-top: 16px;
+  align-self: flex-start;/* 추가: 닫기 버튼을 시작 지점으로 정렬 */
 }
 
 .photo-details-modal__images {
@@ -42,8 +48,10 @@
 }
 
 .photo-details-modal__image {
-  max-width: 65%; //95%였음
+  max-width: 95%;
   border-radius: 8px;
+  display: flex;
+  align-items: center;
 }
 
 .photo-details-modal__top-bar {
@@ -58,6 +66,13 @@
 .photo-details-modal__photographer-details {
   display: flex;
   font-size: 16px;
+  flex-direction: row;
+  align-items: center;
+  padding: 10px 0;
+  margin-bottom: 20px;
+  flex-direction: column;
+  align-items: flex-start;
+  width:100%;
 }
 
 .photo-details-modal__header {
@@ -86,4 +101,12 @@
   font-weight: 700;
   font-size: 12px;
   margin-left: 8px;
+}
+
+.photo-details-modal__related-title {
+  font-size: 0.8rem; 
+  font-weight: bold;
+  align-items: flex-start;
+  margin-top: 1rem; 
+  margin-bottom: 1rem; 
 }
