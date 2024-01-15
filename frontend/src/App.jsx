@@ -14,7 +14,6 @@ const App = () => {
     onClosePhotoDetailsModal
   } = useApplicationData();
 
-  // keep same keys in photoListInfo, because rest of component continues to use same key name
   const photoListInfo = { toggleFav:updateToFavPhotoIds, favoritePhotos:state.favoritePhotos, openModal:setPhotoSelected};
 
   return (
