@@ -2,7 +2,11 @@ import React from "react";
 import "../styles/PhotoListItem.scss";
 import PhotoFavButton from "./PhotoFavButton";
 
+
+
+
 const PhotoListItem = ({ photo, toggleFav, favoritePhotos, openModal}) => {
+  console.log("openModal at PhotoListItem", openModal);
   return (
     <div className="photo-list__item" onClick={()=> openModal(photo)}>
       <div className="photo-list__image-container">

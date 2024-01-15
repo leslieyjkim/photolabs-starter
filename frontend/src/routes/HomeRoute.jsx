@@ -4,7 +4,7 @@ import PhotoList from '../components/PhotoList';
 import TopNavigationBar from '../components/TopNavigationBar';
 
 
-const HomeRoute = ({ topics, photos, setDisplayModal, displayModal, photoListInfo }) => {
+const HomeRoute = ({ topics, photos, photoListInfo }) => {
 
   const isFavPhotoExist = photoListInfo.favoritePhotos.length > 0;
   
@@ -15,7 +15,6 @@ const HomeRoute = ({ topics, photos, setDisplayModal, displayModal, photoListInf
         photos={ photos }
         toggleFav={ photoListInfo.toggleFav }
         favoritePhotos={ photoListInfo.favoritePhotos }
-        setSelectedPhoto={ photoListInfo.setSelectedPhoto }
         openModal={ photoListInfo.openModal }/>
     </div>
   );

@@ -14,7 +14,6 @@ const PhotoDetailsModal = ({ photo, closeModal, photoListInfo}) => {
       photos={ Object.values(photo.similarPhotos) }
       toggleFav={ photoListInfo.toggleFav }
       favoritePhotos={ photoListInfo.favoritePhotos }
-      setSelectedPhoto={ photoListInfo.setSelectedPhoto }
       openModal={ photoListInfo.openModal }/>);
   };
 
