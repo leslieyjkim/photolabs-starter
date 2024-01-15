@@ -28,7 +28,7 @@ const reducer = (state, action) =>  {
 
 const useApplicationData = function() {
   const [state, dispatch] = useReducer(reducer, initialState);
-  
+
   useEffect(() => {
     fetch("/api/photos")
       .then(response => response.json())
@@ -36,16 +36,28 @@ const useApplicationData = function() {
   }, []);
 
   const updateToFavPhotoIds = (photoId) => {
-    const actionType = state.favoritePhotos.includes(photoId) ? 'REMOVE_FAVORITE_PHOTO' : 'ADD_FAVORITE_PHOTO';
-    dispatch({ type: actionType, payload: photoId });
+    try {
+      const actionType = state.favoritePhotos.includes(photoId) ? 'REMOVE_FAVORITE_PHOTO' : 'ADD_FAVORITE_PHOTO';
+      dispatch({ type: actionType, payload: photoId });
+    } catch (error) {
+      console.error('Error updating favorite photo IDs:', error);
+    }
   };
 
   const setPhotoSelected = (photo) => {
-    dispatch({ type: 'SELECT_PHOTO', payload: photo });
+    try {
+      dispatch({ type: 'SELECT_PHOTO', payload: photo });
+    } catch (error) {
+      console.error('Error setting selected photo:', error);
+    }
   };
 
   const onClosePhotoDetailsModal = () => {
-    dispatch({ type: 'CLOSE_MODAL' });
+    try {
+      dispatch({ type: 'CLOSE_MODAL' });
+    } catch (error) {
+      console.error('Error closing photo details modal:', error);
+    }
   };
 
   return {

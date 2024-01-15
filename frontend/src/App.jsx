@@ -2,8 +2,6 @@ import React from 'react';
 import './App.scss';
 import HomeRoute from './routes/HomeRoute';
 import PhotoDetailsModal from './routes/PhotoDetailsModal';
-import topics from './mocks/topics';
-import photos from './mocks/photos';
 import useApplicationData from './hooks/useApplicationData';
 
 const App = () => {
