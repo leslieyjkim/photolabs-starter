@@ -12,6 +12,8 @@ const reducer = (state, action) =>  {
   switch (action.type) {
   case 'SET_PHOTO_DATA':
     return { ...state, photoData: action.payload };
+  case 'SET_TOPIC_DATA':
+    return { ...state, topicData: action.payload };
   case 'ADD_FAVORITE_PHOTO':
     return { ...state, favoritePhotos: [...state.favoritePhotos, action.payload] };
   case 'REMOVE_FAVORITE_PHOTO':
@@ -34,6 +36,14 @@ const useApplicationData = function() {
       .then(response => response.json())
       .then(data => dispatch({ type: 'SET_PHOTO_DATA', payload: data }));
   }, []);
+
+  useEffect(() => {
+    fetch("/api/topics")
+      .then(response => response.json())
+      .then(data => dispatch({ type: 'SET_TOPIC_DATA', payload: data }));
+  }, []);
+
+
 
   const updateToFavPhotoIds = (photoId) => {
     try {
