@@ -3,10 +3,11 @@ import './App.scss';
 import HomeRoute from './routes/HomeRoute';
 import PhotoDetailsModal from './routes/PhotoDetailsModal';
 import topics from './mocks/topics';
-import {photos} from './mocks/photos';
+import photos from './mocks/photos';
 import useApplicationData from './hooks/useApplicationData';
 
 const App = () => {
+
   const {
     state,
     updateToFavPhotoIds,
@@ -18,7 +19,7 @@ const App = () => {
 
   return (
     <div className="App">
-      <HomeRoute topics={topics} photos={photos} photoListInfo={photoListInfo} />
+      <HomeRoute topics={state.topicData} photos={state.photoData} photoListInfo={photoListInfo} />
       {state.displayModal && <PhotoDetailsModal photo={state.selectedPhoto} closeModal={onClosePhotoDetailsModal} photoListInfo={photoListInfo} />}
     </div>
   );

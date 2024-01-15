@@ -10,6 +10,8 @@ const initialState = {
 
 const reducer = (state, action) =>  {
   switch (action.type) {
+  case 'SET_PHOTO_DATA':
+    return { ...state, photoData: action.payload };
   case 'ADD_FAVORITE_PHOTO':
     return { ...state, favoritePhotos: [...state.favoritePhotos, action.payload] };
   case 'REMOVE_FAVORITE_PHOTO':
@@ -26,6 +28,12 @@ const reducer = (state, action) =>  {
 
 const useApplicationData = function() {
   const [state, dispatch] = useReducer(reducer, initialState);
+  
+  useEffect(() => {
+    fetch("/api/photos")
+      .then(response => response.json())
+      .then(data => dispatch({ type: 'SET_PHOTO_DATA', payload: data }));
+  }, []);
 
   const updateToFavPhotoIds = (photoId) => {
     const actionType = state.favoritePhotos.includes(photoId) ? 'REMOVE_FAVORITE_PHOTO' : 'ADD_FAVORITE_PHOTO';

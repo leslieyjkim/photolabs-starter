@@ -4,6 +4,7 @@ import PhotoList from '../components/PhotoList';
 import TopNavigationBar from '../components/TopNavigationBar';
 
 
+
 const HomeRoute = ({ topics, photos, photoListInfo }) => {
 
   const isFavPhotoExist = photoListInfo.favoritePhotos.length > 0;
