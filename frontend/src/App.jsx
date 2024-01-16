@@ -9,16 +9,35 @@ const App = () => {
   const {
     state,
     updateToFavPhotoIds,
+    onLoadTopic,
+    onLoadFavourites,
+    onRefetchAllPhotos,
     setPhotoSelected,
-    onClosePhotoDetailsModal
+    onClosePhotoDetailsModal,
   } = useApplicationData();
 
-  const photoListInfo = { toggleFav:updateToFavPhotoIds, favoritePhotos:state.favoritePhotos, openModal:setPhotoSelected};
+  // const photoListInfo = { toggleFav:updateToFavPhotoIds, favoritePhotos:state.favoritePhotos, openModal:setPhotoSelected};
 
   return (
-    <div className="App">
-      <HomeRoute topics={state.topicData} photos={state.photoData} photoListInfo={photoListInfo} />
-      {state.displayModal && <PhotoDetailsModal photo={state.selectedPhoto} closeModal={onClosePhotoDetailsModal} photoListInfo={photoListInfo} />}
+    <div className='App'>
+      <HomeRoute
+        topics={state.topicData}
+        photos={state.photoData}
+        favourites={state.favourites}
+        updateToFavPhotoIds={updateToFavPhotoIds}
+        setPhotoSelected={setPhotoSelected}
+        onLoadTopic={onLoadTopic}
+        onLoadFavourites={onLoadFavourites}
+        onRefetchAllPhotos={onRefetchAllPhotos}
+      />
+      {state.displayModal && (
+        <PhotoDetailsModal
+          photo={state.displayModal}
+          favourites={state.favourites}
+          updateToFavPhotoIds={updateToFavPhotoIds}
+          onClosePhotoDetailsModal={onClosePhotoDetailsModal}
+        />
+      )}
     </div>
   );
 };

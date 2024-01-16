@@ -1,12 +1,16 @@
 import React from "react";
-
 import "../styles/TopicListItem.scss";
 
-const TopicListItem = ({ topic }) => {
+const TopicListItem = ({ id, title, onLoadTopic }) => {
+  const handleClick = () => {
+    onLoadTopic(id);
+  };
+
   return (
-    <div className="topic-list__item">
-      {topic.title}
-    </div>
+    <span className='topic-list__item' onClick={handleClick}>
+      <span>{title}</span>
+    </span>
   );
 };
+
 export default TopicListItem;

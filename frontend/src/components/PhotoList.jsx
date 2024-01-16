@@ -3,19 +3,37 @@ import "../styles/PhotoList.scss";
 import PhotoListItem from "./PhotoListItem";
 
 
-const PhotoList = ({ photos, toggleFav, favoritePhotos, openModal }) => {
+const PhotoList = ({
+  photos,
+  favourites,
+  updateToFavPhotoIds,
+  setPhotoSelected,
+}) => {
+  let photoArray = [];
+
+  if (Array.isArray(photos)) {
+    photoArray = photos;
+  } else if (typeof photos === 'object') {
+    photoArray = Object.values(photos);
+  }
+
   return (
-    <ul className="photo-list">
-      {photos.map((photo) => {
-        return (
+    <ul className='photo-list'>
+      {photoArray.map((photo) => (
+        <li key={photo.id}>
           <PhotoListItem
-            key={photo.id}
+            id={photo.id}
+            location={photo.location}
+            imageSource={photo.urls.regular}
+            name={photo.user.name}
+            profile={photo.user.profile}
+            isFavourite={favourites && favourites.includes(photo.id)}
+            updateToFavPhotoIds={() => updateToFavPhotoIds(photo.id)} //updateToFavPhotoIds - Function triggered when the favourite button is clicked.
+            setPhotoSelected={setPhotoSelected} //setPhotoSelected - Function triggered to select a photo.
             photo={photo}
-            toggleFav={toggleFav}
-            favoritePhotos={favoritePhotos}
-            openModal={openModal}/>);
-      }
-      )}
+          />
+        </li>
+      ))}
     </ul>
   );
 };

@@ -275,4 +275,4 @@ const photos = [
   }
 ];
 
-export {photos, photo2, photo3, photo4, photo5}; // TODO: later remove photo2 ~ photo5
+export default photos;

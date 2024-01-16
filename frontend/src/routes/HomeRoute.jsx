@@ -4,19 +4,34 @@ import PhotoList from '../components/PhotoList';
 import TopNavigationBar from '../components/TopNavigationBar';
 
 
-
-const HomeRoute = ({ topics, photos, photoListInfo }) => {
-
-  const isFavPhotoExist = photoListInfo.favoritePhotos.length > 0;
+const HomeRoute = ({
+  topics,
+  photos,
+  favourites,
+  updateToFavPhotoIds,
+  onLoadTopic,
+  onLoadFavourites,
+  onRefetchAllPhotos,
+  setPhotoSelected,
+}) => {
   
+  const isFavPhotoExist = favourites.length > 0;
+
   return (
-    <div className="home-route">
-      <TopNavigationBar topics={ topics } isFavPhotoExist={ isFavPhotoExist }/>
+    <div className='home-route'>
+      <TopNavigationBar
+        topics={topics}
+        isFavPhotoExist={isFavPhotoExist}
+        onLoadTopic={onLoadTopic}
+        onLoadFavourites={onLoadFavourites}
+        onRefetchAllPhotos={onRefetchAllPhotos}
+      />
       <PhotoList
-        photos={ photos }
-        toggleFav={ photoListInfo.toggleFav }
-        favoritePhotos={ photoListInfo.favoritePhotos }
-        openModal={ photoListInfo.openModal }/>
+        photos={photos}
+        favourites={favourites}
+        updateToFavPhotoIds={updateToFavPhotoIds}
+        setPhotoSelected={setPhotoSelected}
+      />
     </div>
   );
 };

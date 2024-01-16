@@ -4,10 +4,18 @@ import "../styles/TopicList.scss";
 import TopicListItem from "./TopicListItem";
 
 
-const TopicList = (props) => {
+const TopicList = ({ topics, onLoadTopic }) => {
   return (
-    <div className="top-nav-bar__topic-list">
-      {props.topics.map((topic, index) => (<TopicListItem key={topic.id + index} topic={topic} />))}
+    <div className='top-nav-bar__topic-list'>
+      {topics.map((topic) => (
+        <span key={topic.id}>
+          <TopicListItem
+            id={topic.id}
+            title={topic.title}
+            onLoadTopic={onLoadTopic}
+          />
+        </span>
+      ))}
     </div>
   );
 };
