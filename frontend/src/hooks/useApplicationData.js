@@ -103,6 +103,7 @@ const useApplicationData = () => {
     }
   };
   //onLoadFavourites - Function triggered when the favourite badge is clicked.
+  //User can click on the heart icon, display all liked photos by the user
   const onLoadFavourites = () => {
     if (state.favourites.length > 0) {
       dispatch({ type: ACTIONS.GET_PHOTOS_BY_FAVOURITED });

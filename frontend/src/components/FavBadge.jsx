@@ -4,7 +4,7 @@ import '../styles/FavBadge.scss';
 
 const FavBadge = ({ isFavPhotoExist, onLoadFavourites }) => { //isFavPhotoExist - Indicates if any favourited photos exist
   const handleClick = () => {
-    onLoadFavourites(isFavPhotoExist); //onLoadFavourites - Function triggered when the favourite badge is clicked
+    onLoadFavourites(isFavPhotoExist); //onLoadFavourites - Function triggered when the favourite badge is clicked CYOA
   };
 
   return (

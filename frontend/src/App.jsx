@@ -3,6 +3,7 @@ import './App.scss';
 import HomeRoute from './routes/HomeRoute';
 import PhotoDetailsModal from './routes/PhotoDetailsModal';
 import useApplicationData from './hooks/useApplicationData';
+import LightSwitchButton from './components/LightSwitchButton';
 
 const App = () => {
 
@@ -20,6 +21,7 @@ const App = () => {
 
   return (
     <div className='App'>
+      <LightSwitchButton />
       <HomeRoute
         topics={state.topicData}
         photos={state.photoData}
@@ -37,6 +39,7 @@ const App = () => {
           updateToFavPhotoIds={updateToFavPhotoIds}
           onClosePhotoDetailsModal={onClosePhotoDetailsModal}
         />
+
       )}
     </div>
   );

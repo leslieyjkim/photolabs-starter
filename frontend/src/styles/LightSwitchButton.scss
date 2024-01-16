@@ -1,0 +1,52 @@
+/* 기본 모드의 배경색과 텍스트 색상 */
+:root {
+    --background-color: #FFFFFF; 
+    --text-color: #000000; 
+    --filter: none; /* 기본 필터 없음 */
+  }
+  
+  /* 나이트 모드의 배경색과 텍스트 색상 */
+  body.night-mode {
+    --background-color: #333333; 
+    --text-color: #333333; 
+    --filter: grayscale(100%); /* 모든 이미지를 회색조로 */
+  }
+  
+  body {
+    background-color: var(--background-color);
+    color: var(--text-color);
+  }
+
+/* Styles for the button in general */
+.LightSwitchButton {
+    padding: 10px 20px;
+    border: Solid;
+    border-color: green;
+    background-color: #f0f0f0;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  /* Styles for the button when the night mode is on */
+  body.night-mode .LightSwitchButton {
+    background-color: #333;
+    color: white;
+  }
+  
+  /* Styles for the "on" and "off" spans */
+  .LightSwitchButton .on,
+  .LightSwitchButton .off {
+    display: none;
+    font-weight: bold;
+  }
+  
+  /* Show the "on" span when night mode is active */
+  body.night-mode .LightSwitchButton .on {
+    display: inline;
+  }
+  
+  /* Show the "off" span when night mode is not active */
+  body:not(.night-mode) .LightSwitchButton .off {
+    display: inline;
+  }
+  

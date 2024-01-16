@@ -9,7 +9,7 @@ const PhotoList = ({
   updateToFavPhotoIds,
   setPhotoSelected,
 }) => {
-  let photoArray = [];
+  let photoArray = [];//emptyArray
 
   if (Array.isArray(photos)) {
     photoArray = photos;
