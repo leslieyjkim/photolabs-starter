@@ -7,8 +7,10 @@ The PhotoLabs project for the SPA (Single Page Application) Web Development Reac
 
 **View Multiple Screenshots**
 
-
-
+file:///Users/yoonjookim/Desktop/Day%20Mode.png
+file:///Users/yoonjookim/Desktop/Night%20Mode.png
+file:///Users/yoonjookim/Desktop/Choose%20my%20favorites.png
+file:///Users/yoonjookim/Desktop/Favorites%20sorting.png
 
 ## Setup
 
