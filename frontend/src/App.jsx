@@ -17,8 +17,6 @@ const App = () => {
     onClosePhotoDetailsModal,
   } = useApplicationData();
 
-  // const photoListInfo = { toggleFav:updateToFavPhotoIds, favoritePhotos:state.favoritePhotos, openModal:setPhotoSelected};
-
   return (
     <div className='App'>
       <LightSwitchButton />
